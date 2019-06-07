@@ -1,7 +1,4 @@
-public class congaLine {
-
-	private congaLineNode first;
-
+public class congaLine {	
 	public class congaLineNode {
 		private String name;
 		private congaLineNode next;
