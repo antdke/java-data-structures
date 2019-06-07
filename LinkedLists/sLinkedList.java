@@ -50,4 +50,46 @@ class sLinkedList<T> {
 			current.next = new sllNode<T>(val);
 		}
 	}
+
+	// Locate a node within a LinkedList by value
+	public sllNode<T> locate (T val) {
+
+		// assign a variable the first node
+		sllNode<T> current = front;
+
+		// while the first node exists...
+		while (current != null) {
+			// ...if the value of the current node equates
+			// 		to the value that we're looking for...
+			if (current.value == val) {
+				//...then return the value of the current node
+				return current;
+			} else {
+				// ...else, assign the next node to be the current variable
+				//    and restart loop.
+				current = current.next;
+			}
+		}
+		
+		// return null if the value isn't found
+		return null;
+	}
+
+	// Add a node after a value in a singly linked list
+	// give this method a target node to add the new node (made out of val) after
+	public void addAfter (sllNode<T> target, T val) {
+		// if the given target null does not exist...
+		if (target == null) {
+			// ...then tell the user that it doesn't exist and exit the function
+			System.out.println("The node you want to add after does not exist. Try again.");
+			return;
+		}
+
+		// create a new node out of the new value with variable current
+		sllNode<T> current = new sllNode<T>(val);
+		// assign the node after the target node as the new node's next node
+		current.next = target.next;
+		// assign the new node to be the target node's next node
+		target.next = current;
+	}
 }
