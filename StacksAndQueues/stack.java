@@ -38,4 +38,16 @@ public class Stack {
     top = node;
   }
 
+  // removes node from the stack by "popping" it off. Be sure to return the data
+  // within the removed node. Doesn't take any args
+  public int pop() {
+    int data = top.data;
+    // check if a top node exists
+    if (top != null) {
+      // assign the node after the top node as the new top node
+      top = top.next;
+    }
+    return data;
+  }
+
 }
