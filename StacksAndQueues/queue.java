@@ -40,4 +40,20 @@ public static class Queue {
     tail = node;
   }
 
+  // removes from the head (front of the line); you want to return the data that
+  // was in the head
+  public int remove() {
+    // capture the head data in a variable
+    int data = head.data;
+    // assign the node after head as the new head node. this removes the node that
+    // was the head from the queue.
+    head = head.next;
+    // assign null to tail if the head of the queue is null
+    if (head == null) {
+      tail = null;
+    }
+    // return the data of the former head node
+    return data;
+  }
+
 }
